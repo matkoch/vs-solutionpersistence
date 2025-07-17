@@ -18,7 +18,7 @@ internal static class StringExtensions
 
     internal static bool EqualsOrdinalIgnoreCase(this StringSpan span, StringSpan str) => MemoryExtensions.Equals(span, str, StringComparison.OrdinalIgnoreCase);
 
-#if NETFRAMEWORK
+#if NETFRAMEWORK || NETSTANDARD
 
     internal static bool EqualsOrdinal(this StringSpan span, string str) => EqualsOrdinal(span, str.AsSpan());
 
@@ -54,7 +54,7 @@ internal static class StringExtensions
 
     internal static string Concat(scoped StringSpan first, scoped StringSpan second)
     {
-#if NETFRAMEWORK
+#if NETFRAMEWORK || NETSTANDARD
         return
             first.IsEmpty ? second.ToString() :
             second.IsEmpty ? first.ToString() :

@@ -5,7 +5,7 @@ namespace Microsoft.VisualStudio.SolutionPersistence;
 
 internal static class CollectionExtensions
 {
-#if NETFRAMEWORK
+#if NETFRAMEWORK || NETSTANDARD
     internal static bool TryAdd<TKey, TValue>(this Dictionary<TKey, TValue> dictionary, TKey key, TValue value)
     {
         if (!dictionary.ContainsKey(key))

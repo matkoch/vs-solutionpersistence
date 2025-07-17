@@ -13,7 +13,7 @@ namespace Microsoft.VisualStudio.SolutionPersistence.Model;
 /// </summary>
 public sealed class SolutionModel : PropertyContainerModel
 {
-#if NETFRAMEWORK
+#if NETFRAMEWORK || NETSTANDARD
     private const string InvalidNameChars = @"?:\/*""<>|";
 #else
     private static readonly SearchValues<char> InvalidNameChars = SearchValues.Create(@"?:\/*""<>|");

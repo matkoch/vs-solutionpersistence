@@ -40,7 +40,7 @@ internal static class DefaultIdGenerator
             return Guid.Empty;
         }
 
-#if NETFRAMEWORK
+#if NETFRAMEWORK || NETSTANDARD
         byte[] allData = data2 is null ? data1 : [.. data1, .. data2];
 
         using (SHA256 hash = SHA256.Create())

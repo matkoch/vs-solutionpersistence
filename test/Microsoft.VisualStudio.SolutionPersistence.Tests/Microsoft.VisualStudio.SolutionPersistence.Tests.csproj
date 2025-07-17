@@ -19,9 +19,9 @@
     <PackageReference Include="System.Memory" VersionOverride="4.6" />
   </ItemGroup>
 
-  <ItemGroup Label="NetFrameworkPackages" Condition=" '$(TargetFramework)' == 'net472' ">
-    <PackageReference Include="IsExternalInit" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.IO.Redist" />
+  <ItemGroup Label="NetFrameworkPackages" Condition=" '$(TargetFramework)' == 'net472' OR '$(TargetFramework)' == 'netstandard2.0'  ">
+<!--    <PackageReference Include="IsExternalInit" PrivateAssets="all" />-->
+<!--    <PackageReference Include="Microsoft.IO.Redist" />-->
     <PackageReference Include="System.Threading.Tasks.Extensions" />
   </ItemGroup>
 

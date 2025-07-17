@@ -1,7 +1,7 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-#if NETFRAMEWORK
+#if NETFRAMEWORK || NETSTANDARD
 global using Microsoft.IO;
 
 // Listing the types in System.IO that aren't in Microsoft.IO is a

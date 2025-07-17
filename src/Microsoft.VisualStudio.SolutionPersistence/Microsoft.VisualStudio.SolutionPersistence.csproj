@@ -1,15 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks Condition="'$(TargetFrameworks)'==''">net472;net8.0</TargetFrameworks>
+    <TargetFrameworks Condition="'$(TargetFrameworks)'==''">netstandard2.0</TargetFrameworks>
   </PropertyGroup>
 
   <!-- Don't run analyzers when building in source build. -->
   <ItemGroup Label="Analyzers" Condition=" '$(SourceBuild)' != 'true' ">
-    <PackageReference Include="Microsoft.CodeAnalysis.PublicApiAnalyzers" PrivateAssets="all" />
+<!--    <PackageReference Include="Microsoft.CodeAnalysis.PublicApiAnalyzers" PrivateAssets="all" />-->
   </ItemGroup>
-  <ItemGroup Label="NetFrameworkPackages" Condition=" '$(TargetFramework)' == 'net472' ">
+  <ItemGroup Label="NetFrameworkPackages" Condition=" '$(TargetFramework)' == 'net472' OR '$(TargetFramework)' == 'netstandard2.0' ">
     <PackageReference Include="IsExternalInit" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.IO.Redist" />
+<!--    <PackageReference Include="Microsoft.IO.Redist" />-->
+    <PackageReference Include="PolySharp" PrivateAssets="all" />
     <PackageReference Include="System.Memory" />
     <PackageReference Include="System.Threading.Tasks.Extensions" />
   </ItemGroup>

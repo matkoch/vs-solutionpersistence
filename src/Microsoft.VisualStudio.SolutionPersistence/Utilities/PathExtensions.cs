@@ -70,7 +70,7 @@ internal static class PathExtensions
         return IsUri(filePath) ? StringSpan.Empty : Path.GetExtension(filePath);
     }
 
-#if NETFRAMEWORK
+#if NETFRAMEWORK || NETSTANDARD
 
     private static bool IsUri(string filePath) => IsUri(filePath.AsSpan());
 

@@ -5,7 +5,7 @@ namespace Microsoft.VisualStudio.SolutionPersistence;
 
 internal static class Argument
 {
-#if NETFRAMEWORK
+#if NETFRAMEWORK || NETSTANDARD
 
     /// <summary>Throws an <see cref="ArgumentNullException"/> if <paramref name="argument"/> is null.</summary>
     /// <param name="argument">The reference type argument to validate as non-null.</param>

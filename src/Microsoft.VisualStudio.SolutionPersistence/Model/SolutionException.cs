@@ -63,7 +63,7 @@ public class SolutionException : FormatException
         this.ErrorType = errorType;
     }
 
-#if NETFRAMEWORK
+#if NETFRAMEWORK || NETSTANDARD
     /// <summary>
     /// Initializes a new instance of the <see cref="SolutionException"/> class.
     /// Used for serialization in .NET Framework.
@@ -102,7 +102,7 @@ public class SolutionException : FormatException
     /// </summary>
     public int? Column { get; init; }
 
-#if NETFRAMEWORK
+#if NETFRAMEWORK || NETSTANDARD
     /// <inheritdoc/>
     [SuppressMessage("ApiDesign", "RS0016:Add public types and members to the declared API", Justification = "Only in .NET Framework.")]
     public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)

@@ -88,11 +88,11 @@ public sealed class SolutionPropertyBag : IReadOnlyDictionary<string, string>
     public string this[string key] => this.properties[key];
 
     /// <inheritdoc/>
-#if NETFRAMEWORK
+#if NETFRAMEWORK || NETSTANDARD
 #nullable disable warnings
 #endif
     public bool TryGetValue(string key, [MaybeNullWhen(false)] out string value) =>
-#if NETFRAMEWORK
+#if NETFRAMEWORK || NETSTANDARD
 #nullable restore
 #endif
         this.properties.TryGetValue(key, out value);

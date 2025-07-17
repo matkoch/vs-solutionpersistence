@@ -285,7 +285,7 @@ public static class SlnV12Extensions
                     return;
                 }
 
-#if NETFRAMEWORK
+#if NETFRAMEWORK || NETSTANDARD
                 Guid projectId = Guid.TryParse(name.Substring(0, firstDot), out Guid id) ? id : Guid.Empty;
 #else
                 Guid projectId = Guid.TryParse(name.AsSpan(0, firstDot), out Guid id) ? id : Guid.Empty;
@@ -615,7 +615,7 @@ public static class SlnV12Extensions
         return solution.SuspendProjectValidation();
     }
 
-#if NETFRAMEWORK
+#if NETFRAMEWORK || NETSTANDARD
 
     internal static Version? TryParseVSVersion(string? strVersion)
     {

@@ -77,11 +77,11 @@ internal readonly struct Lictionary<TKey, TValue> : IReadOnlyDictionary<TKey, TV
 
     public bool ContainsKey(TKey key) => this.BinarySearch(key) >= 0;
 
-#if NETFRAMEWORK
+#if NETFRAMEWORK || NETSTANDARD
 #nullable disable warnings
 #endif
     public bool TryGetValue(TKey key, [MaybeNullWhen(false)] out TValue value)
-#if NETFRAMEWORK
+#if NETFRAMEWORK || NETSTANDARD
 #nullable restore
 #endif
     {
@@ -157,7 +157,7 @@ internal readonly struct Lictionary<TKey, TValue> : IReadOnlyDictionary<TKey, TV
 
     internal void EnsureCapacity(int capacity)
     {
-#if NETFRAMEWORK
+#if NETFRAMEWORK || NETSTANDARD
         if (capacity > this.items.Capacity)
         {
             this.items.Capacity = capacity;

@@ -5,7 +5,7 @@ namespace Utilities;
 
 internal static class StringExtensions
 {
-#if NETFRAMEWORK
+#if NETFRAMEWORK || NETSTANDARD
     public static bool StartsWith(this StringSpan span, string str) => span.StartsWith(str.AsSpan(), StringComparison.Ordinal);
 
     public static bool EndsWith(this StringSpan span, string str) => span.EndsWith(str.AsSpan(), StringComparison.Ordinal);
