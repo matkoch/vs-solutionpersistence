@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks Condition="'$(TargetFrameworks)'==''">netstandard2.0</TargetFrameworks>
+    <PackageId>matkoch.Microsoft.VisualStudio.SolutionPersistence</PackageId>
   </PropertyGroup>
 
   <!-- Don't run analyzers when building in source build. -->
