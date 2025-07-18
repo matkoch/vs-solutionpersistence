@@ -28,7 +28,7 @@ SolutionModel is the class that represents a solution, it has a SolutionProjectM
 
 For the most part any serializer specific concepts are removed from the model, but it does allow for serializer specific properties to be added using a ISerializerModelExtension. Each serializer has a CreateModelExtension method for creating a default model extension, as well as overloads for specifying options that are specific to each file format. For example .sln files support writing different encodings (ASCII, UTF-8 w/ BOM, and UTF-16). While .slnx files have options to customize XML formatting.
 
-See [Samples Wiki](https://github.com/microsoft/vs-solutionpersistence/wiki/Samples)
+See [Samples Wiki](https://github.com/matkoch/vs-solutionpersistence/wiki/Samples)
 
 ## Trademark
 

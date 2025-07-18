@@ -28,10 +28,10 @@
     <!-- Local builds should embed PDBs so we never lose them when a subsequent build occurs. -->
     <DebugType Condition=" '$(CI)' != 'true' and '$(TF_BUILD)' != 'true' ">embedded</DebugType>
 
-    <PackageProjectUrl>https://github.com/microsoft/vs-solutionpersistence</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/matkoch/vs-solutionpersistence</PackageProjectUrl>
     <Company>Microsoft</Company>
-    <Authors>Microsoft</Authors>
-    <Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
+    <Authors>Microsoft;Matthias Koch</Authors>
+    <Copyright>© Microsoft Corporation and Matthias Koch. All rights reserved.</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
